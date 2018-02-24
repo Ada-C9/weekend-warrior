@@ -6,13 +6,10 @@ class Alouette
   # Provided verse_num must be a valid verse number for 'Alouette'. Returns the
   # the individual lines for each verse up to and including verse_num.
   def self.lines_for_verse(verse_num)
-    verses = [
-      "Et la tête!", "Et le bec!", "Et les yeux!", "Et le cou!", "Et les ailes!",
-      "Et les pattes!", "Et la queue!", "Et le dos!"
-    ]
-    requested_verses = []
-    verse_num.downto(0) { |index| requested_verses << verses[index] }
-    return requested_verses
+    verses =
+      ["Et la tête!", "Et le bec!", "Et les yeux!", "Et le cou!",
+      "Et les ailes!", "Et les pattes!", "Et la queue!", "Et le dos!"]
+    return verse_num.downto(0).map { |index| verses[index] }
   end
 
   # Provided verse_num must be a valid verse number for 'Alouette'. Returns the
@@ -32,9 +29,7 @@ class Alouette
   def self.sing
     chorus = "Alouette, gentille alouette,\nAlouette, je te plumerai."
     song = ""
-    (0..7).each do |verse_num|
-      song = "#{song}\n\n#{verse(verse_num)}\n\n#{chorus}"
-    end
+    (0..7).each { |num| song = "#{song}\n\n#{verse(num)}\n\n#{chorus}" }
     song = "#{chorus}#{song}"
     return song
   end
