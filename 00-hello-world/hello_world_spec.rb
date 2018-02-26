@@ -3,6 +3,8 @@ require 'minitest/pride'
 require 'minitest/autorun'
 require_relative 'hello_world'
 
+# Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
+
 describe "Hello World" do
   it "When given 'Alice' it should greet Alice!" do
     expect(hello_world 'Alice').must_equal 'Hello, Alice!'
