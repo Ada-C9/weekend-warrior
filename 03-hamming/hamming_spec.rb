@@ -44,22 +44,18 @@ describe Hamming do
   end
 
   it "Check large distance in off by one strand" do
-    skip
     expect(Hamming.compute('GGACGGATTCTG', 'AGGACGGATTCT')).must_equal 9
   end
 
   it "Check Empty Strands" do
-    skip
     expect(Hamming.compute('', '')).must_equal 0
   end
 
   it "Check disallow first strand longer" do
-    skip
     expect ( proc { Hamming.compute('AATG', 'AAA') }).must_raise ArgumentError
   end
 
   it "Check disallow second strand longer" do
-    skip
     expect( proc { Hamming.compute('ATA', 'AGTG') }).must_raise ArgumentError
   end
 end

@@ -8,13 +8,19 @@ class Hamming
     strand1 = nucleotide.chars
     strand2 = new_strand.chars
 
-    count = strand1.length
-    x = 0
-    count.times do |i|
-      if strand1[i] != strand2[i]
-        x += 1
+    count1 = strand1.length
+    count2 = strand2.length
+
+    if count1 != count2
+      raise ArgumentError.new("Strands must be equal in length")
+    else
+      x = 0
+      count1.times do |i|
+        if strand1[i] != strand2[i]
+          x += 1
+        end
       end
+      return x
     end
-    return x
   end
 end
