@@ -9,13 +9,11 @@ class Hamming
     strand2 = new_strand.chars
 
     count = strand1.length
-
+    x = 0
     count.times do |i|
-      x = 0
       if strand1[i] != strand2[i]
         x += 1
       end
-      return x
     end
     return x
   end
