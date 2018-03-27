@@ -28,22 +28,18 @@ describe Hamming do
   end
 
   it "Check small distance in long strands" do
-    skip
     expect(Hamming.compute('ACCAGGG', 'ACTATGG')).must_equal 2
   end
 
   it "Check non_unique character in first strand" do
-    skip
     expect(Hamming.compute('AGA', 'AGG')).must_equal 1
   end
 
   it "Check non unique character in second strand" do
-    skip
     expect(Hamming.compute('AGG', 'AGA')).must_equal 1
   end
 
   it "Check large_distance" do
-    skip
     expect(Hamming.compute('GATACA', 'GCATAA')).must_equal 4
   end
 
