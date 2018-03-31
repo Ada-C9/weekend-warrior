@@ -1,5 +1,3 @@
-# Completed 2/23/18
-
 # This program calculates the points of mutation between two DNA strands.
 class Hamming
 
