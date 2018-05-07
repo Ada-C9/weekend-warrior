@@ -3,13 +3,15 @@
 # This program return the DNA equivalent of an RNA sequence and the RNA
 # equivalent of a DNA sequence.
 class Complement
+  DNA_TO_RNA = {"G" => "C", "C" => "G", "T" => "A", "A" => "U"}
+  RNA_TO_DNA = {"C" => "G", "G" => "C", "A" => "T", "U" => "A"}
 
   # Throws ArgumentError if any character in provided sequence does not have an
   # RNA equivalent
   #
   # Converts provided DNA sequence to RNA.
   def self.of_dna(sequence)
-    return convert(sequence, {"G" => "C", "C" => "G", "T" => "A", "A" => "U"})
+    return convert(sequence, DNA_TO_RNA)
   end
 
   # Throws ArgumentError if any character in provided sequence does not have an
@@ -17,7 +19,7 @@ class Complement
   #
   # Converts provided sequence to DNA.
   def self.of_rna(sequence)
-    return convert(sequence, {"C" => "G", "G" => "C", "A" => "T", "U" => "A"})
+    return convert(sequence, RNA_TO_DNA)
   end
 
   private
